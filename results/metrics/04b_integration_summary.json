@@ -1,0 +1,21 @@
+{
+  "source_dataset": "US DOT 2015 Flight Delays",
+  "integration_method": "BTS exact-description crosswalk and Spark broadcast left joins",
+  "original_flights": 5714008,
+  "enriched_flights": 5714008,
+  "enriched_columns": 27,
+  "verified_airport_mappings": 320,
+  "october_flights": 482878,
+  "october_origin_coverage_percent": 99.18,
+  "october_destination_coverage_percent": 99.18,
+  "records": 5714008,
+  "mapped_origins": 478940,
+  "mapped_destinations": 478936,
+  "unmapped_origin_ids": 3938,
+  "unmapped_destination_ids": 3942,
+  "unmatched_airlines": 0,
+  "unmatched_origins": 3938,
+  "unmatched_destinations": 3942,
+  "original_airport_columns_preserved": true,
+  "parquet_verified": true
+}

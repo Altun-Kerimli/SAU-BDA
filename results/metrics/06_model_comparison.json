@@ -1,0 +1,37 @@
+{
+    "sample_fraction": 0.05,
+    "seed": 42,
+    "training_records": 228443,
+    "testing_records": 57118,
+    "training_class_distribution": {
+        "non_delayed": 186080,
+        "delayed": 42363
+    },
+    "positive_class_weight": 4.3925,
+    "models": [
+        {
+            "model": "Logistic Regression",
+            "accuracy": 0.5911,
+            "precision": 0.2486,
+            "recall": 0.5984,
+            "f1_score": 0.3512,
+            "roc_auc": 0.6252,
+            "true_positive": 6322,
+            "true_negative": 27442,
+            "false_positive": 19111,
+            "false_negative": 4243
+        },
+        {
+            "model": "Random Forest",
+            "accuracy": 0.5962,
+            "precision": 0.2534,
+            "recall": 0.6079,
+            "f1_score": 0.3577,
+            "roc_auc": 0.638,
+            "true_positive": 6422,
+            "true_negative": 27634,
+            "false_positive": 18919,
+            "false_negative": 4143
+        }
+    ]
+}

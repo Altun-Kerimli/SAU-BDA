@@ -1,0 +1,111 @@
+{
+  "experiment": "Local Spark partition performance comparison",
+  "dataset": "flights_clean.parquet",
+  "spark_version": "4.1.1",
+  "execution_mode": "local[2]",
+  "driver_memory": "4g",
+  "records": 5714008,
+  "partition_counts": [
+    2,
+    4,
+    8,
+    16
+  ],
+  "warmup_runs": 1,
+  "timed_repetitions": 5,
+  "storage_level": "MEMORY_AND_DISK",
+  "adaptive_query_execution": false,
+  "operation": "Group flights by airline; count flights, sum delays, calculate average delay rate",
+  "timing_scope": "Cached Spark aggregation only. Excludes Parquet reading, repartitioning and cache preparation.",
+  "best_measured_partition_count": 4,
+  "results": [
+    {
+      "partitions": 2,
+      "records": 5714008,
+      "airline_groups": 14,
+      "cache_preparation_seconds": 5.4019,
+      "median_seconds": 0.0851,
+      "mean_seconds": 0.0888,
+      "std_seconds": 0.0108,
+      "min_seconds": 0.0788,
+      "max_seconds": 0.1054,
+      "rows_per_second": 67118523.82,
+      "run_times_seconds": [
+        0.0936,
+        0.0851,
+        0.1054,
+        0.0813,
+        0.0788
+      ],
+      "speedup_vs_2_partitions": 1.0
+    },
+    {
+      "partitions": 4,
+      "records": 5714008,
+      "airline_groups": 14,
+      "cache_preparation_seconds": 3.6977,
+      "median_seconds": 0.0775,
+      "mean_seconds": 0.0934,
+      "std_seconds": 0.0413,
+      "min_seconds": 0.0591,
+      "max_seconds": 0.1631,
+      "rows_per_second": 73721335.29,
+      "run_times_seconds": [
+        0.0704,
+        0.1631,
+        0.0591,
+        0.0968,
+        0.0775
+      ],
+      "speedup_vs_2_partitions": 1.098
+    },
+    {
+      "partitions": 8,
+      "records": 5714008,
+      "airline_groups": 14,
+      "cache_preparation_seconds": 3.461,
+      "median_seconds": 0.0981,
+      "mean_seconds": 0.104,
+      "std_seconds": 0.0152,
+      "min_seconds": 0.0859,
+      "max_seconds": 0.1239,
+      "rows_per_second": 58254547.75,
+      "run_times_seconds": [
+        0.1239,
+        0.1149,
+        0.0981,
+        0.0972,
+        0.0859
+      ],
+      "speedup_vs_2_partitions": 0.867
+    },
+    {
+      "partitions": 16,
+      "records": 5714008,
+      "airline_groups": 14,
+      "cache_preparation_seconds": 4.1035,
+      "median_seconds": 0.135,
+      "mean_seconds": 0.1376,
+      "std_seconds": 0.021,
+      "min_seconds": 0.1177,
+      "max_seconds": 0.1674,
+      "rows_per_second": 42329308.82,
+      "run_times_seconds": [
+        0.1191,
+        0.1177,
+        0.1674,
+        0.135,
+        0.149
+      ],
+      "speedup_vs_2_partitions": 0.63
+    }
+  ],
+  "limitations": [
+    "Single-machine Spark local mode",
+    "Only two local worker threads",
+    "One aggregation workload",
+    "Cached input rather than end-to-end processing",
+    "Short timings are sensitive to runtime variation",
+    "Results do not establish multi-machine scalability"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "dataset": "flights_enriched.parquet (corrected October airport identifiers)",
+  "split": "Train Jan-Aug 2015; validation Sep-Oct 2015; test Nov-Dec 2015",
+  "sample_fraction": 0.05,
+  "seed": 42,
+  "split_counts": {
+    "train_Jan_Aug": 191430,
+    "validation_Sep_Oct": 47472,
+    "test_Nov_Dec": 46659
+  },
+  "training_class_counts": {
+    "1": 38655,
+    "0": 152775
+  },
+  "positive_class_weight": 3.952270081490105,
+  "top_airports_per_direction": 25,
+  "forest_trees": 25,
+  "feature_columns": [
+    "AIRLINE",
+    "ORIGIN_GROUP",
+    "DESTINATION_GROUP",
+    "WEEKDAY_CATEGORY",
+    "MONTH_SIN",
+    "MONTH_COS",
+    "HOUR_SIN",
+    "HOUR_COS",
+    "DISTANCE",
+    "SCHEDULED_TIME"
+  ],
+  "threshold_selection": "Maximum validation F1; test set remains untouched",
+  "comparison_warning": "Results are not directly comparable with the original random-split experiment.",
+  "results": [
+    {
+      "model": "Logistic Regression",
+      "setting": "default_0.50",
+      "roc_auc": 0.5978601218138865,
+      "pr_auc": 0.2276554901986996,
+      "test_rows": 46659,
+      "threshold": 0.5,
+      "accuracy": 0.5254077455581988,
+      "precision": 0.21845054409615072,
+      "recall": 0.6500724987916868,
+      "f1_score": 0.32701191344517383,
+      "tp": 5380,
+      "tn": 19135,
+      "fp": 19248,
+      "fn": 2896
+    },
+    {
+      "model": "Logistic Regression",
+      "setting": "validation_tuned",
+      "roc_auc": 0.5978601218138865,
+      "pr_auc": 0.2276554901986996,
+      "test_rows": 46659,
+      "threshold": 0.55,
+      "accuracy": 0.6160654964744208,
+      "precision": 0.2304206757663907,
+      "recall": 0.49770420492991785,
+      "f1_score": 0.3150045885591924,
+      "tp": 4119,
+      "tn": 24626,
+      "fp": 13757,
+      "fn": 4157
+    },
+    {
+      "model": "Random Forest",
+      "setting": "default_0.50",
+      "roc_auc": 0.6035067406580924,
+      "pr_auc": 0.2293408713724383,
+      "test_rows": 46659,
+      "threshold": 0.5,
+      "accuracy": 0.5364881373368482,
+      "precision": 0.22237471407777085,
+      "recall": 0.6460850652489125,
+      "f1_score": 0.3308684756040964,
+      "tp": 5347,
+      "tn": 19685,
+      "fp": 18698,
+      "fn": 2929
+    },
+    {
+      "model": "Random Forest",
+      "setting": "validation_tuned",
+      "roc_auc": 0.6035067406580924,
+      "pr_auc": 0.2293408713724383,
+      "test_rows": 46659,
+      "threshold": 0.5,
+      "accuracy": 0.5364881373368482,
+      "precision": 0.22237471407777085,
+      "recall": 0.6460850652489125,
+      "f1_score": 0.3308684756040964,
+      "tp": 5347,
+      "tn": 19685,
+      "fp": 18698,
+      "fn": 2929
+    }
+  ]
+}

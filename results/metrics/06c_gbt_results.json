@@ -1,0 +1,72 @@
+{
+  "model": "Spark GBTClassifier",
+  "spark_version": "4.1.1",
+  "dataset": "flights_enriched.parquet",
+  "seed": 42,
+  "sample_fraction": 0.05,
+  "split_counts": {
+    "train_Jan_Aug": 191430,
+    "validation_Sep_Oct": 47472,
+    "test_Nov_Dec": 46659
+  },
+  "training_class_counts": {
+    "1": 38655,
+    "0": 152775
+  },
+  "positive_class_weight": 3.952270081490105,
+  "top_airports_per_direction": 25,
+  "hyperparameters": {
+    "maxIter": 30,
+    "maxDepth": 5,
+    "stepSize": 0.1,
+    "subsamplingRate": 0.8,
+    "minInstancesPerNode": 10
+  },
+  "baseline_comparison_settings_match": true,
+  "threshold_selection": "Maximum validation F1; test not used for tuning",
+  "validation_best": {
+    "threshold": 0.5,
+    "accuracy": 0.5902005392652511,
+    "precision": 0.1735797797506428,
+    "recall": 0.5966316491579123,
+    "f1_score": 0.2689214580984592,
+    "tp": 3578,
+    "tn": 24440,
+    "fp": 17035,
+    "fn": 2419
+  },
+  "test_results": [
+    {
+      "model": "Gradient-Boosted Trees",
+      "setting": "default_0.50",
+      "roc_auc": 0.600410272430726,
+      "pr_auc": 0.22213615318473123,
+      "test_rows": 46659,
+      "threshold": 0.5,
+      "accuracy": 0.5608349943204956,
+      "precision": 0.22487499436911573,
+      "recall": 0.6031899468342194,
+      "f1_score": 0.32761279737489746,
+      "tp": 4992,
+      "tn": 21176,
+      "fp": 17207,
+      "fn": 3284
+    },
+    {
+      "model": "Gradient-Boosted Trees",
+      "setting": "validation_tuned",
+      "roc_auc": 0.600410272430726,
+      "pr_auc": 0.22213615318473123,
+      "test_rows": 46659,
+      "threshold": 0.5,
+      "accuracy": 0.5608349943204956,
+      "precision": 0.22487499436911573,
+      "recall": 0.6031899468342194,
+      "f1_score": 0.32761279737489746,
+      "tp": 4992,
+      "tn": 21176,
+      "fp": 17207,
+      "fn": 3284
+    }
+  ]
+}

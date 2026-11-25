@@ -1,0 +1,29 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Spark
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Hadoop and Parquet metadata
+*.crc
+_SUCCESS
+
+# Large processed datasets
+data/processed/
+
+# Original datasets
+data/raw/
+
+# Environment and temporary files
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,53 @@
+{
+    "experiment": "Spark scalability by dataset size",
+    "spark_version": "4.1.1",
+    "master": "local[2]",
+    "driver_memory": "4g",
+    "partitions": 8,
+    "repetitions": 3,
+    "warmup_runs": 1,
+    "storage_level": "MEMORY_AND_DISK",
+    "timing_scope": "Cached airline aggregation",
+    "results": [
+        {
+            "dataset_size": 100000,
+            "partitions": 8,
+            "run_1_seconds": 0.3729,
+            "run_2_seconds": 0.3242,
+            "run_3_seconds": 0.2955,
+            "average_seconds": 0.3309,
+            "median_seconds": 0.3242,
+            "rows_per_second": 308480.4
+        },
+        {
+            "dataset_size": 500000,
+            "partitions": 8,
+            "run_1_seconds": 0.3234,
+            "run_2_seconds": 0.2804,
+            "run_3_seconds": 0.2707,
+            "average_seconds": 0.2915,
+            "median_seconds": 0.2804,
+            "rows_per_second": 1783007.93
+        },
+        {
+            "dataset_size": 1000000,
+            "partitions": 8,
+            "run_1_seconds": 0.2391,
+            "run_2_seconds": 0.224,
+            "run_3_seconds": 0.22,
+            "average_seconds": 0.2277,
+            "median_seconds": 0.224,
+            "rows_per_second": 4464160.16
+        },
+        {
+            "dataset_size": 5714008,
+            "partitions": 8,
+            "run_1_seconds": 0.6806,
+            "run_2_seconds": 0.5836,
+            "run_3_seconds": 0.6353,
+            "average_seconds": 0.6332,
+            "median_seconds": 0.6353,
+            "rows_per_second": 8993970.55
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "original_records": 5819079,
+    "valid_records_before_deduplication": 5714008,
+    "clean_records": 5714008,
+    "removed_invalid_cancelled_diverted": 105071,
+    "removed_exact_duplicates": 0,
+    "delayed_flights": 1063439,
+    "delay_rate_percent": 18.61,
+    "output_columns": [
+        "YEAR",
+        "MONTH",
+        "DAY",
+        "DAY_OF_WEEK",
+        "AIRLINE",
+        "ORIGIN_AIRPORT",
+        "DESTINATION_AIRPORT",
+        "SCHEDULED_DEPARTURE",
+        "SCHEDULED_ARRIVAL",
+        "SCHEDULED_TIME",
+        "DISTANCE",
+        "ARRIVAL_DELAY",
+        "DEP_HOUR",
+        "IS_DELAYED"
+    ],
+    "parquet_verified": true
+}
